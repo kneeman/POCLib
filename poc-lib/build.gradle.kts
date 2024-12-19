@@ -39,7 +39,7 @@ android {
     namespace = "com.mindbodyonline.poclibexample"
     compileSdk = 34
     defaultConfig {
-        minSdk = 25
+        minSdk = 23
     }
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_1_8
