@@ -62,7 +62,7 @@ mavenPublishing {
     coordinates(
         groupId = "com.mindbodyonline.poclibexample",
         artifactId = "poc-lib",
-        version = "0.0.2"
+        version = "0.0.3"
     )
 
     // Configure POM metadata for the published artifact
