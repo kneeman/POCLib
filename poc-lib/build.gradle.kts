@@ -51,7 +51,7 @@ publishing {
     repositories {
         maven {
             name = "githubPackages"
-            url = uri("https://maven.pkg.github.com/<GITHUB_USER_NAME>/MathLibGuide")
+            url = uri("https://maven.pkg.github.com/kneeman/POCLib")
             credentials(PasswordCredentials::class)
         }
     }
