@@ -24,7 +24,7 @@ let package = Package(
     name: "POCLib",
     platforms: [.macOS(.v13)],
     dependencies: [
-        .package(url: "https://github.com/kneeman/POCLib.git", branch: "main")
+        .package(url: "https://github.com/kneeman/POCLib.git", branch: "feautre/iOS-integration-2")
     ],
     targets: [
         .binaryTarget(
