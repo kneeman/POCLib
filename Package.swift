@@ -8,9 +8,16 @@ let package = Package(
         .package(url: "https://github.com/kneeman/POCLib.git", branch: "main")
     ],
     targets: [
-        .binaryTarget(
-            name: "poc_lib",
-            path: "poc-lib/build/XCFrameworks/poc_lib.xcframework"
-        )
+        if (isLocal)
+            .binaryTarget(
+                    name: "poc-lib",
+                    path: ".poc-lib/build/XCFrameworks/poc_lib.xcframework"
+            ) else
+            .binaryTarget(
+                name: "$name",
+                url: "$url",
+                checksum: "$checksum"
+            )
+        ]
     ]
 )
