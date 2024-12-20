@@ -28,7 +28,7 @@ let package = Package(
     ],
     targets: [
         .binaryTarget(
-            name: "poclib",
+            name: "poc_lib",
             path: "poc-lib/build/XCFrameworks/poc_lib.xcframework"
         )
     ]
