@@ -27,9 +27,9 @@ let package = Package(
         .package(url: "https://github.com/kneeman/POCLib.git", branch: "main")
     ],
     targets: [
-        .executableTarget(
-            name: "poc-lib",
-            dependencies: []
+        .binaryTarget(
+            name: "poclib",
+            path: "poc-lib/build/xcframework/poc_lib.xcframework"
         )
     ]
 )
