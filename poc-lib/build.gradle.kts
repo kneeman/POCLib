@@ -1,3 +1,5 @@
+import org.jetbrains.kotlin.gradle.plugin.mpp.apple.XCFramework
+
 plugins {
     alias(libs.plugins.kotlinMultiplatform)
     alias(libs.plugins.androidLibrary)
@@ -13,7 +15,8 @@ kotlin {
         }
         publishLibraryVariants("release")
     }
-    
+
+    val xcf = XCFramework()
     listOf(
         iosX64(),
         iosArm64(),
@@ -21,6 +24,7 @@ kotlin {
     ).forEach {
         it.binaries.framework {
             baseName = "poc-lib"
+            xcf.add(this)
             isStatic = true
         }
     }
@@ -94,3 +98,27 @@ mavenPublishing {
         }
     }
 }
+
+//tasks.register("assembleXCFramework") {
+//    dependsOn("linkReleaseFrameworkIosArm64", "linkReleaseFrameworkIosSimulatorArm64")
+//    doLast {
+//        val xcframeworkDir = buildDir.resolve("xcframework")
+//        xcframeworkDir.deleteRecursively()
+//        xcframeworkDir.mkdirs()
+//
+//        val frameworkDirs = listOf(
+//            buildDir.resolve("bin/iosArm64/releaseFramework"),
+//            buildDir.resolve("bin/iosSimulatorArm64/releaseFramework")
+//        )
+//
+//        exec {
+//            commandLine(
+//                "xcodebuild",
+//                "-create-xcframework",
+//                *frameworkDirs.flatMap { listOf("-framework", it.resolve("poc_lib.framework").path) }.toTypedArray(),
+//                "-output",
+//                xcframeworkDir.resolve("poc_lib.xcframework").path
+//            )
+//        }
+//    }
+//}
