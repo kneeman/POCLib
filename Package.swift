@@ -14,27 +14,8 @@ let package = Package(
     ],
     targets: [
         .binaryTarget(
-            name: "poc-lib",
+            name: "poc_lib",
             path: "./poc-lib/build/xcframework/poc_lib.xcframework"
         )
     ]
 )
-
-// // swift-tools-version:5.3
-// import PackageDescription
-//
-// let package = Package(
-//    name: "POCLib",
-//    platforms: [
-//      .iOS(.v14),
-//    ],
-//    products: [
-//       .library(name: "POCLib", targets: ["POCLib"])
-//    ],
-//    targets: [
-//       .binaryTarget(
-//          name: "POCLib",
-//          url: "<link to the uploaded XCFramework ZIP file>",
-//          checksum:"<checksum calculated for the ZIP file>")
-//    ]
-// )
