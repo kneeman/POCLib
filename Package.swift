@@ -14,8 +14,9 @@ let package = Package(
     ],
     targets: [
         .binaryTarget(
-            name: "poc_lib",
-            path: "poc-lib/build/xcframework/poc_lib.xcframework"
+            name: "POCLib",
+            url: "https://github.com/kneeman/POCLib/releases/download/v0.1.0/POCLib.xcframework.zip",
+            checksum:"686f501bd466370230375a138873f493d5eaead79dcfa26629dfc380c97bb2ad"
         )
     ]
 )

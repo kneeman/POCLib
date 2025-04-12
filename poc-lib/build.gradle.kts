@@ -16,14 +16,18 @@ kotlin {
         publishLibraryVariants("release")
     }
 
-    val xcf = XCFramework()
+    val xcframeworkName = "POCLib"
+    val xcf = XCFramework(xcframeworkName)
     listOf(
         iosX64(),
         iosArm64(),
         iosSimulatorArm64()
     ).forEach {
         it.binaries.framework {
-            baseName = "poc-lib"
+            baseName = xcframeworkName
+
+            // Specify CFBundleIdentifier to uniquely identify the framework
+            binaryOption("bundleId", "com.prateek.${xcframeworkName}")
             xcf.add(this)
             isStatic = true
         }
